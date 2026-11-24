@@ -69,7 +69,7 @@ pdflatex  -interaction=batchmode "${project}.tex"
 echo "LaTeX Done"
 
 # put date on the pdf file
-cp "${project}.pdf" "../archived papers/${project}_${stamp}.pdf"
+cp "${project}.pdf" "../archived_papers/${project}_${stamp}.pdf"
 
 # clean junk again
 rm -f *.log *.aux *.toc *.nav *.snm *.out *.txt *.gz *.bbl  *.blg *.vrb

@@ -1,0 +1,100 @@
+% Competition
+% Based on psg template
+% 24 11 26
+
+\documentclass[12pt, a4paper]{article}
+
+\usepackage{graphicx}
+\usepackage{comment}
+\usepackage{pdflscape}
+\usepackage{geometry}
+\usepackage{float}
+\usepackage[natbibapa]{apacite}
+\usepackage{url}
+\usepackage[official]{eurosym}
+\usepackage{booktabs} %better tables from stata
+\usepackage{multirow} %grouped rows table
+
+
+\bibliographystyle{apacite} %uses ampersands and not ands
+
+
+% Title, abstract and "thanks" for use in different title pages
+\newcommand{\mytitle}{Does the CCPC Follow Its Own Merger Guidelines? Irish Merger Decisions, 2003--2025}
+\newcommand{\myabstract}{ %
+	Blah
+	\newline
+	\newline
+	Keywords: Merger control; Merger guidelines; HHI; Competition authorities; Ireland.
+	\newline
+	\newline
+	JEL Codes: L40; K21.}
+
+\newcommand{\tks}{%
+	We are grateful to... % We are also very grateful to two anonymous referees whose comments greatly improved the paper.
+	 All the remaining errors are ours.}
+
+
+\begin{document}
+
+% title page with contact details
+\title{\mytitle}
+
+
+\author{Vincent Hogan \\
+	School of Economics \\
+	University College Dublin \\
+	vincent.hogan@ucd.ie
+	\and 
+	Patrick Massey \\
+	Compecon \\
+	Dublin\\
+	pmassey@compecon.ie\thanks{Corresponding Author. \tks}
+}
+
+\date{\today}
+
+\maketitle
+
+
+
+
+
+
+\begin{abstract}
+	\myabstract
+\end{abstract}
+
+
+
+
+%\section{Introduction}
+
+%\section{A First Look at the Data \label{first}}
+
+%\section{Model \label{model}}
+ 
+\begin{landscape}
+%\input{../output/sample.tex}
+\end{landscape}
+
+
+%\newgeometry{top=1cm, bottom=1cm, left=1cm, right=1cm}
+
+
+
+\begin{landscape}
+%	\input{../output/nl.tex}
+\end{landscape}
+
+
+
+
+\restoregeometry
+
+
+
+\urlstyle{rm}
+\bibliography{comp}
+
+\end{document}
