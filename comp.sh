@@ -40,7 +40,7 @@ cd ../../do
 
 
 # Array of do-files in execution order
-do_files=("uncoded" "merge" "code"  "first" "nl" "nl_prep" "nl_ivr" "nl_ivab" "nl_compare" "sample")
+do_files=("raw" "code"  "first" )
 
 for f in "${do_files[@]}"; do
     echo "Running ${f}.do"

@@ -1,7 +1,6 @@
 * competion law paper
 * adpated from FL Attendance paper
 * Read in the data and deal with date issues
-* read in cvs formats to deal with date issue
 * In excel manually format the date column to be a consistent format: best is custom "DD/MM/YYYY"
 * In excel save as "CSV UTF-8 (Comma delimited)" rather than plain "CSV (Comma delimited)".
 
@@ -108,9 +107,11 @@ foreach var of varlist _all {
 
 drop ah as ax
 
+drop if missing(notificationdate) & missing(decisiondate)
+
+
+
 label data "raw data read from $file on $x"
-
-
 
 save "./data/coded/raw.dta", replace
 
