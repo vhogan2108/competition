@@ -1,0 +1,24 @@
+*.log
+*.aux
+*.bbl
+*.pdf
+*.gz
+*.nav
+*.out
+*.blg
+*.snm
+*.toc
+*.zip
+/data/coded
+/output
+/others
+
+# R session leftovers (dropped into whichever directory R was run from)
+.Rhistory
+.RData
+.Rapp.history
+
+# project-local Stata packages (reinstalled by do/00_packages.do)
+/ado
+# Stata batch logs written to the root before comp.sh moves them
+/*.log

@@ -1,0 +1,47 @@
+ 
+
+I am enclosing file with data on mergers as previously discussed. Data  covers period from January 2003 to December 2025. Its an updated version of dataset that I put together for my merger book. The file has a spreadsheet with the data and a second spreadsheet explaining all the variables.
+
+ 
+
+There were 867 mergers identified as having some degree of horizontal overlap during that period. Its possible to identify data on HHI or change in HHI for 664 cases (76.6%). Of these 658 (75.9%)  can be defined as low, medium or high risk based on HHI thresholds in CA/CCPC Merger Guidelines.
+
+The question is does CCPC adhere to its own guidelines.
+
+ 
+
+I identified 3 possible dependent variables.
+
+RemPro refers to cases that were prohibited or remedied. In theory its possible to test whether high risk cases were prevented by either being remedied or prohibited. We only have 50 such cases so we will not get a significant result from that so probably not worth bothering.
+
+DetInv refers to cases that were subject to detailed investigation. This allows us to establish if high risk cases were at least carefully reviewed. There are 120 such cases so could possibly produce a result. This compares with 160 high risk cases.
+
+Duration. Is the length of time taken for each case from notification to decision. This includes all cases and the test here is whether high risk cases take longer to decide which would indicate they were looked at more carefully.
+
+ 
+
+There are a range of other explanatory variables including: NACE industry codes. The number of markets in any case ( the more markets the more complex). The number or low, medium and high risk markets in each case. We also have the identity of the chair, member in charge of mergers and director of mergers in each case to test whether individual decision markers make a difference. (See Pickford paper) I suspect there may be too many individuals overall to get any meaningful result form this. We have cumulative case numbers tor each of chair, member and director. In this case we only include case numbers for the role, we do not ascribe them individually, to see if experience affects outcomes. Data also identifies whether certain factors were mentioned in decision e.g. barriers to entry or whether the CCPC had dealt with a previous case in the same market or involving the same firm or firms.
+
+ 
+
+There are a few papers in this area. I am attaching a paper by Affeldt et al involving a similar type of analysis of EU merger cases. It’s a DP from 2019. Don’t know if it has subsequently appeared in a journal.
+
+Yong & Pickford (2016) Modelling the Duration of Merger Reviews in New Zealand, Journal of Competition Law & Economics, 12(1) 31-68 sought to explain length of time to decide on merger cases in NZ.
+
+Garside et al (2013), Does Experience Make You Tougher: Evidence from Competition Law, EJ 123, 474-490 tests proposition that experience of decision makers may affect outcomes in competition cases. Note we have applied this to referees in some of the rugby papers with Paul & Pete.
+
+Aktas et al (2007), Is European M&A Regulation Protectionist? EJ 117, 1096-1121. Not directly relevant but maybe worth a look at for possible ideas on modelling.
+
+Bergman et al., (2005), An Econometric Analysis of the European Commission's Merger Decisions, International Journal of Industrial Organization, 23(9-10), 717-737.
+
+Coate & McChesney, (1992), Enforcement of the US Merger Guidelines. Empirical Evidence on FTC Enforcement of the Merger Guidelines. Economic Inquiry, 30, 277-293. Obviously this is quite an old paper but seems to involve a relatively limited dataset.
+
+ 
+
+The above is probably plenty to be getting on with. I had suggested that if we could do this, we could submit it to IEA. They normally have a January submission deadline but there is nothing on their website as yet.
+
+ 
+
+Let me know what your thoughts once you have had a look.
+
+
