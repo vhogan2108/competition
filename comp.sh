@@ -16,31 +16,14 @@ echo "Batch file for project: ${project}..."
 home="${research_home}/Papers/${project}"
 stamp=$(date +%Y-%m-%d-%H-%M)
 
-
-# clean junk
 cd "${home}"
-
-
-cd ./paper
-rm -f *.log *.aux *.toc *.nav *.snm *.out *.txt *.gz *.bbl *.pdf *.blg *.vrb
-cd ../output
-rm -f *.log *.aux *.toc *.nav *.snm *.out *.txt *.gz *.bbl *.pdf *.blg *.vrb *smcl
-rm -f ./word/*.rtf ./word/*.docx   # table numbers come from do/tables.do and can shift
-
-
 
 
 # Execute Stata Scripts removing coded data file first
 echo "Executing Stata scripts..."
+cd ./do
 
-cd ../data/coded
-rm -f *.dta
-
-cd ../../do
-
-
-# Array of do-files in execution order
-do_files=("raw" "code"  "first" )
+do_files=("raw" "code"  "first" "ols") # Array of do-files in execution order
 
 for f in "${do_files[@]}"; do
     echo "Running ${f}.do"
@@ -52,30 +35,20 @@ for f in "${do_files[@]}"; do
 done
 
 # LaTeX
-echo "Processing LaTeX"
+echo "Processing LaTeX for ${project} "
 cd ../paper
-echo "${project}"
 
-
-
-
-pdflatex  -interaction=batchmode "${project}.tex"
-# note location of the aux file
+pdflatex  -interaction=batchmode "${project}.tex" # note location of the aux file
 bibtex "$project"
-
 pdflatex  -interaction=batchmode "${project}.tex"
 pdflatex  -interaction=batchmode "${project}.tex"
 
 echo "LaTeX Done"
 
-# put date on the pdf file
+# time stamp and archive the file
 cp "${project}.pdf" "../archived_papers/${project}_${stamp}.pdf"
 
-# clean junk again
+# clean junk 
 rm -f *.log *.aux *.toc *.nav *.snm *.out *.txt *.gz *.bbl  *.blg *.vrb
-#cd ../output  keep so i can check manually
-#rm -f *.log *.aux *.toc *.nav *.snm *.out *.txt *.gz *.bbl *.pdf *.blg *.vrb * smcl
-#cd ../do
-#rm -f *.log *.aux *.toc *.nav *.snm *.out *.txt *.gz *.bbl *.pdf *.blg *.vrb *smcl
 
 cd ..

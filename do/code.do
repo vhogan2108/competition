@@ -30,7 +30,7 @@ di "$x"
 
 use "./data/coded/raw.dta", clear
 
-
+* code categorical vars
 mvencode  mkt* chair_* mem_* d_* risk_*, mv(0) override
 
 
@@ -55,6 +55,16 @@ label define directors 1 "DN" 2 "CK" 3 "IB" 4 "AS"
 label values chairman chairs
 label values member members
 label values dir directors
+
+*time
+gen period=0 if year <=2014
+replace period=1 if year >=2015 & year <=2018
+replace period=2 if year >=2019 & year<=2022
+replace period=3 if year >=2023 & year<2026
+label define time 0 "2003-2014" 1 "2015-2018" 2 "2019-2022" 3 "2023-2025"
+label values period time
+label variable period "Year Interval"
+
 
 
 label data "coded data read from raw.dta on $x"
