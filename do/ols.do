@@ -49,12 +49,12 @@ estadd local FE "No"
 estadd local chair "No"
 estimates store all_$depvar
 
-regress $depvar risk_c bte cbp prevcas compnos mkt_total _Iperiod*,robust
+regress $depvar risk_c bte cbp prevcas compnos mkt_total policy,robust
 estadd local FE "Yes"
 estadd local chair "No"
 estimates store period_$depvar
 
-regress $depvar bte cbp prevcas compnos mkt_total _Iperiod* chair_*, robust
+regress $depvar bte cbp prevcas compnos mkt_total policy chair_* mem_* d_*, robust
 estadd local FE "Yes"
 estadd local chair "Yes"
 estimates store chair_$depvar
@@ -108,9 +108,9 @@ estimates store chair_$depvar
 
 
 #delimit ;
-global options "replace $outtype compress nogaps label nodepvars 
+global options "replace $outtype compress nogaps nolabel nodepvars 
 	numbers  mlab(none) star(* 0.10 ** 0.05 *** 0.01) nonotes
-	keep(risk_c bte cbp prevcas compnos mkt_total)
+	keep(risk_c bte cbp prevcas compnos mkt_total policy chair_* d_* mem_*)
 	stats(FE chair N r2,labels("Period FE" "Chair FE" "Obs." "R2"))
 	addn(" Robust standard errors." 
 	     "* p\textless0.10, ** p\textless0.05, *** p\textless0.01.")" ;		
