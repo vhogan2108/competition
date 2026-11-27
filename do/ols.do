@@ -60,30 +60,9 @@ estadd local chair "Yes"
 estimates store chair_$depvar
 
 
-* detinv
-global depvar "detinv"
-regress $depvar risk_c ,robust
-estadd local FE "No"
-estadd local chair "No"
-estimates store risk_$depvar
-
-regress $depvar risk_c bte cbp prevcas compnos mkt_total, robust
-estadd local FE "No"
-estadd local chair "No"
-estimates store all_$depvar
-
-regress $depvar risk_c bte cbp prevcas compnos mkt_total _Iperiod*,robust
-estadd local FE "Yes"
-estadd local chair "No"
-estimates store period_$depvar
-
-regress $depvar bte cbp prevcas compnos mkt_total _Iperiod* chair_*, robust
-estadd local FE "Yes"
-estadd local chair "Yes"
-estimates store chair_$depvar
-
 
 * rempro
+keep if prelim==0
 global depvar "rempro"
 regress $depvar risk_c ,robust
 estadd local FE "No"
@@ -139,11 +118,7 @@ global options "replace $outtype compress nogaps label nodepvars
 
 esttab  risk_prelim all_prelim period_prelim chair_prelim  using "./output/prelim" , $options ///
 			title(Cleared on Preliminary Investigation\label{prelim}) 
-			
-			
-esttab  risk_detinv all_detinv period_detinv chair_detinv using "./output/detinv" , $options ///
-			title(Case Subject to Detailed Investigation\label{detinv}) 
-			
+						
 esttab  risk_rempro all_rempro period_rempro chair_rempro  using "./output/rempro" , $options ///
 			title(Remedied or Prohibited\label{rempro}) 			
 

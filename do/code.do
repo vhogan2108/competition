@@ -64,6 +64,8 @@ replace period=3 if year >=2023 & year<2026
 label define time 0 "2003-2014" 1 "2015-2018" 2 "2019-2022" 3 "2023-2025"
 label values period time
 label variable period "Year Interval"
+gen policy=(period!=0)
+label variable policy "Post 2014"
 
 
 
